@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struk Barakah Jaya Unggas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .form-container, .struk-container {
+      border: 1px solid black;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    input[type="text"], input[type="date"], select, textarea {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    .btn {
+      padding: 10px 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container" id="formContainer">
+  <h2>BARAKAH JAYA UNGGAS</h2>
+
+  <label>Nama: <input type="text" id="nama"></label><br>
+  <label>Tanggal: <input type="date" id="tanggal"></label><br>
+  <label>No Hp: <input type="text" id="hp"></label><br>
+  <label>Alamat:<br><textarea id="alamat"></textarea></label><br>
+
+  <label>Jenis Unggas:
+    <select id="jenis">
+      <option value="">-- Pilih Jenis --</option>
+      <option value="DOC Broiler">DOC Broiler</option>
+      <option value="DOC Joper">DOC Joper</option>
+      <option value="DOC Petelur">DOC Petelur</option>
+      <option value="DOC Elba">DOC Elba</option>
+      <option value="DOC Pejantan">DOC Pejantan</option>
+      <option value="DOC Warna Warani">DOC Warna Warani</option>
+      <option value="DOD Petelur">DOD Petelur</option>
+      <option value="DOD Pejantan">DOD Pejantan</option>
+      <option value="DOD Hibrida">DOD Hibrida</option>
+      <option value="DOD Peking/Pedading">DOD Peking/Pedading</option>
+      <option value="DOD Entok">DOD Entok</option>
+    </select>
+  </label><br>
+
+  <label>Catatan Pemesanan:<br>
+    <textarea id="catatan"></textarea>
+  </label><br>
+
+  <label>Harga: <input type="text" id="harga"></label><br>
+
+  <button class="btn" onclick="cetakStruk()">Cetak Struk</button>
+</div>
+
+<div class="struk-container hidden" id="strukContainer">
+  <h2>STRUK PEMBELIAN<br>BARAKAH JAYA UNGGAS</h2>
+  <p id="outNama"></p>
+  <p id="outTanggal"></p>
+  <p id="outHp"></p>
+  <p id="outAlamat"></p>
+  <p><strong>Jenis yang dipesan:</strong> <span id="outJenis"></span></p>
+  <p><strong>Catatan:</strong> <span id="outCatatan"></span></p>
+  <p><strong>Harga:</strong> Rp <span id="outHarga"></span></p>
+
+  <button class="btn" onclick="window.print()">Print</button>
+  <button class="btn" onclick="kembali()">Kembali</button>
+</div>
+
+<script>
+  function cetakStruk() {
+    // Ambil data dari form
+    document.getElementById("outNama").innerText = "Nama: " + document.getElementById("nama").value;
+    document.getElementById("outTanggal").innerText = "Tanggal: " + document.getElementById("tanggal").value;
+    document.getElementById("outHp").innerText = "No HP: " + document.getElementById("hp").value;
+    document.getElementById("outAlamat").innerText = "Alamat: " + document.getElementById("alamat").value;
+    document.getElementById("outCatatan").innerText = document.getElementById("catatan").value;
+    document.getElementById("outHarga").innerText = document.getElementById("harga").value;
+
+    const jenis = document.getElementById("jenis").value;
+    document.getElementById("outJenis").innerText = jenis ? jenis : "-";
+
+    // Tampilkan struk dan sembunyikan form
+    document.getElementById("formContainer").classList.add("hidden");
+    document.getElementById("strukContainer").classList.remove("hidden");
+  }
+
+  function kembali() {
+    document.getElementById("formContainer").classList.remove("hidden");
+    document.getElementById("strukContainer").classList.add("hidden");
+  }
+</script>
+
+</body>
+</html>
+
+commit "upload halaman struk"
