@@ -104,4 +104,78 @@
 </body>
 </html>
 
-commit "upload halaman struk"
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Struk Pembelian</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .struk {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #333;
+    }
+
+    .struk h2 {
+      text-align: center;
+    }
+
+    .struk p {
+      margin: 5px 0;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .btn-group {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .btn-group button {
+      padding: 8px 12px;
+      margin: 0 10px;
+    }
+
+    .no-print {
+      display: block;
+    }
+
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="struk">
+  <h2>STRUK PEMBELIAN<br>BARAKAH JAYA UNGGAS</h2>
+
+  <p>Nama: zaini</p>
+  <p>Tanggal: 2025-06-30</p>
+  <p>No HP: 0987653535</p>
+  <p>Alamat: eeyyevdg</p>
+
+  <p><span class="bold">Jenis yang dipesan:</span> DOC Pejantan</p>
+  <p><span class="bold">Catatan:</span> 1 box</p>
+  <p><span class="bold">Harga:</span> Rp 300.000</p>
+
+  <div class="btn-group no-print">
+    <button onclick="window.print()">Print</button>
+    <button onclick="window.history.back()">Kembali</button>
+  </div>
+</div>
+
+<!-- Ini teks yang muncul tadi -->
+<p class="no-print">commit "upload halaman struk"</p>
+
+</body>
+</html>
+
